@@ -1,6 +1,6 @@
-
 import './App.css';
-
+import pokebolaVazia from './assets/images/emptypokeball.png'
+//<img src={require('asset/imgem.png)} />
 
 function App() {
 
@@ -18,7 +18,8 @@ function App() {
       })
       .catch(err => {
         document.getElementById("pokeName").innerHTML = "Pokémon não encontrado";
-        pokeImg.src = "./src/assets/images/pokebolaVazia.png";
+        pokeImg.src = pokebolaVazia;
+        pokeImg.width = 70;
         pokeImg.alt = "Pokébola aberta e vazia";
       })
       
@@ -30,13 +31,13 @@ function App() {
       <h1>Pokédex</h1>
         <form>
             <fieldset>
-                <label for="pokemon">Pokémon:</label>
+                <label htmlFor="pokemon">Pokémon:</label>
                 <input type="text" id="pokemon" placeholder="Digite o nome do Pokémon"/>
                 <button type="button" id="search" onClick={searchPokemon}>Pesquisar Pokémon</button>
 
                 <div id="mostrarPokemon">
                     <h2 id="pokeName"></h2>
-                    <img id="pokeImg" />
+                    <img id="pokeImg"/>
                 </div>
             </fieldset>
         </form>
